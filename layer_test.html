@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .bottom-layer {
+      position: absolute;
+      top: 0%;
+      left: 40px;
+      z-index: 1;
+    }
+    .top-layer {
+      position: absolute;
+      top: 0px;
+      left: 40px;
+      z-index: 2;
+    }
+    .control-layer {
+      position: absolute;
+      top: 1100px;
+      left: 160px;
+      z-index: 2;
+    }
+
+    .row {
+      display: flex;
+      margin: 0px;
+      align-items: center;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid ">
+    <div class="row justify-content-center">
+        <div class="bottom-layer">
+            <img src="window_color.svg" id="window_color_svg" width="50%" height="40%">    
+        </div>
+        <div class="top-layer">
+          <!-- Replace the content below with your SVG image -->
+          <!-- <svg width="300" height="100"> -->
+            <img src="TARDIS.svg" width="50%" height="50%">
+            <!-- <rect width="100%" height="100%" fill="blue" /> -->
+          </svg>
+        </div>
+    </div>
+    
+    <div class="control-layer">
+      <div class="row justify-content-center">
+        <label for="window-color" class="form-label">Color:  </label>
+        <input type="color" class="form-control form-control-color w-25" 
+                            id="window-color" 
+                            value="#563d7c" 
+                            title="Choose your color">
+        
+        <div class="row justify-content-center">
+          <label for="front-window-color" class="form-label">Brightness:  </label>
+          <input type="range" class="custom-range w-50">
+        </div>
+        <div class="row justify-content-center">
+          <button type="button" class="btn btn-info" id="test_button">Button</button>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const button = document.getElementById('test_button');
+
+    button.addEventListener('click', function() {
+      // Do whatever you want
+    console.log("Hello world!");  
+
+    if (document.getElementById('window_color_svg'))
+      var svg = document.getElementById("window_color_svg");
+      console.log("Found SVG");  
+      console.log('Fill:', svg.style.fill);  
+      svg.style.fill = "#e6e600";
+      console.log('Fill:', svg.style.fill);  
+    
+  });
+  </script>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
