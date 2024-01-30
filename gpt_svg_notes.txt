@@ -1,0 +1,32 @@
+You can write a JavaScript function to change the fill color of the SVG path using the 
+document object model (DOM). Here's an example function 
+that takes an id as an argument and sets the fill attribute of the corresponding SVG path:
+
+function changeFillColor(id, newColor) {
+  // Get the SVG path element by its id
+  var svgPath = document.getElementById(id);
+
+  // Check if the SVG path element exists
+  if (svgPath) {
+    // Set the fill attribute to the new color
+    svgPath.style.fill = newColor;
+  } else {
+    console.error("SVG path with id '" + id + "' not found");
+  }
+}
+
+In your SVG document, you can add an id attribute to the <path> element, like this:
+
+<path id="mySvgPath" d="M802.174,556.51L0,556.51L0,754.512L89.005,754.512L89.005,1362.21L1638.38,1362.21L1638.38,754.512L1718.78,754.512L1718.78,556.51L911.609,556.51L911.609,52.632L855.985,29.267L802.174,52.632L802.174,556.51Z" style="fill:#eb1010;"/>
+
+
+Then, you can use the changeFillColor function to change the fill color dynamically:
+
+changeFillColor("mySvgPath", "#00ff00"); // Change fill color to green
+
+
+Replace "mySvgPath" with the actual id you set in your SVG document and "#00ff00" with the desired 
+new color.
+
+
+SOme more text
